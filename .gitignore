@@ -1,0 +1,5 @@
+# No code comment needed here (not a code block)
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
