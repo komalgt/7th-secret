@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Get Secret') {
       steps {
-        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'your-jenkins-aws-creds']]) {
+        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-secretsmanager-creds']]) {
           sh '''
             secret=$(aws secretsmanager get-secret-value --secret-id my_example_secret --query SecretString --output text)
             username=$(echo $secret | jq -r .username)
